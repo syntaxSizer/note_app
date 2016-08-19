@@ -11,6 +11,7 @@ class NotesApplication (object):
 
   def create(self, note_content):
     self.my_saved_notes.append(note_content)
+    self.list()
     
 
   def list(self):
