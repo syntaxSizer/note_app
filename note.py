@@ -1,7 +1,6 @@
 #/usr/bin/python
 class NotesApplication (object):
- # note_content = raw_input('any notes for today ?')
-
+  
   not_id = 0
   def __init__(self,author='Author'):
     NotesApplication.not_id +=1
@@ -9,21 +8,23 @@ class NotesApplication (object):
     self.my_saved_notes = []
     self.id = NotesApplication.not_id
 
-  def input_(self):
-      note_content = raw_input('any notes for today ?')
-      self.create(note_content)
-      self.list()
+#  def input_(self):
+#      note_content = raw_input("any notes for today ?\n " )
+#      self.create(note_content)
+#     self.list()
  
 
-  def create(self, note_content):
-    self.my_saved_notes.append(note_content)
+  def create(self, note_content =' '):
+      note_content = raw_input("any notes for today ?\n " )
+      self.my_saved_notes.append(note_content)
    
     
 
   def list(self):
-      print("note id:"+str(self.id))
-      print(self.my_saved_notes)
-      print("by Author : "+ self.author)
+      for item in self.my_saved_notes:
+          print("note id:"+str(self.id))
+          print self.my_saved_notes[item]
+          print("by Author : "+ self.author)
   
   #return the note 
   def get (self,note_id):
@@ -49,9 +50,11 @@ class NotesApplication (object):
     self.list()
     print '/n'  
 s = NotesApplication('qusai')
-print s.input_()
-
-
+print s.create()
+print s.create()
+print s.create()
+print s.create()
+print s.search()
 
 
           
