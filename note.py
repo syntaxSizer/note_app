@@ -56,7 +56,7 @@ c= NotesApplication('jaguar')
 
 print s.create()
 #print s.get(1)
-print s.search()
+#print s.search()
 
 
 
