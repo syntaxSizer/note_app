@@ -14,30 +14,30 @@ class NotesApplication (object):
 #     self.list()
  
 
-  def create(self, note_content =' '):
-      note_content = raw_input("any notes for today ?\n " )
-      self.my_saved_notes.append(note_content)
-   
-    
+  def create(self, note_content =''):
+      note_content = raw_input("any notes for today ?  " )
+      self.my_saved_notes.append(note_content)  
+     
 
   def list(self):
       for item in self.my_saved_notes:
-          print("note id:"+str(self.id))
-          print self.my_saved_notes[item]
+          print("note id: ",self.id)
+          print item
           print("by Author : "+ self.author)
   
   #return the note 
   def get (self,note_id):
-      return str(my_saved_notes[note_id])
+      return str(self.my_saved_notes[note_id])
   
 # search 
-  def search (self, search_text):
-    for note in my_saved_notes:
-        for text in note:
-          if search_text == text:
-            print 'result for search'
-            self.list()
-            print '/n'
+  def search (self, search_text=''):
+    search_text=raw_input('input search text...  ')
+    for note in self.my_saved_notes:
+       # for text in note:
+        if search_text in note:
+            print 'result for search %s ' % note
+        else:
+            print ' No match found for %s ' % search_text    
 
 
   def delete(self,note_id):
@@ -49,12 +49,15 @@ class NotesApplication (object):
     my_saved_notes[note_id] = new_content
     self.list()
     print '/n'  
-s = NotesApplication('qusai')
+s= NotesApplication('qusai')
+a= NotesApplication('sam')
+c= NotesApplication('jaguar')
+
+
 print s.create()
-print s.create()
-print s.create()
-print s.create()
+#print s.get(1)
 print s.search()
+
 
 
           
